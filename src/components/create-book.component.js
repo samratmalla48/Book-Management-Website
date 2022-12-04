@@ -44,7 +44,7 @@ export default class CreateBook extends Component {
       })
 
 
-    axios.get('http://localhost:5000/categorys/')
+    axios.get('https://backend-hepw.onrender.com/categorys/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -114,7 +114,7 @@ export default class CreateBook extends Component {
 
     console.log(book.image);
 
-    axios.post('http://localhost:5000/books/add', book)
+    axios.post('https://backend-hepw.onrender.com/books/add', book)
       .then(res => console.log(res.data));
 
     window.location = '/';
