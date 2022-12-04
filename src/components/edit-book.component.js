@@ -29,7 +29,7 @@ export default class EditBook extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/books/'+this.props.match.params.id)
+    axios.get('https://backend-hepw.onrender.com/books/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           authorname: response.data.authorname,
@@ -44,7 +44,7 @@ export default class EditBook extends Component {
         console.log(error);
       })
 
-    axios.get('http://localhost:5000/authors/',{headers: {'Access-Control-Allow-Origin': '*'}})
+    axios.get('https://backend-hepw.onrender.com/authors/',{headers: {'Access-Control-Allow-Origin': '*'}})
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -57,7 +57,7 @@ export default class EditBook extends Component {
       })
 
       
-    axios.get('http://localhost:5000/categorys/',{headers: {'Access-Control-Allow-Origin': '*'}})
+    axios.get('https://backend-hepw.onrender.com/categorys/',{headers: {'Access-Control-Allow-Origin': '*'}})
     .then(response => {
       if (response.data.length > 0) {
         this.setState({
@@ -121,7 +121,7 @@ export default class EditBook extends Component {
 
     console.log(book);
 
-    axios.post('http://localhost:5000/books/update/' + this.props.match.params.id, book)
+    axios.post('https://backend-hepw.onrender.com/books/update/' + this.props.match.params.id, book)
       .then(res => console.log(res.data));
 
     window.location = '/';
