@@ -28,7 +28,7 @@ export default class CreateAuthor extends Component {
 
     console.log(author);
 
-    axios.post('http://localhost:5000/authors/add', author)
+    axios.post('https://backend-hepw.onrender.com/authors/add', author)
       .then(res => console.log(res.data));
 
     this.setState({
