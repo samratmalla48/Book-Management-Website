@@ -27,7 +27,7 @@ export default class BooksList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/books/',{headers: {'Access-Control-Allow-Origin': '*'}})
+    axios.get('https://backend-hepw.onrender.com/books/',{headers: {'Access-Control-Allow-Origin': '*'}})
       .then(response => {
         this.setState({ books: response.data })
       })
@@ -37,7 +37,7 @@ export default class BooksList extends Component {
   }
 
   deleteBook(id) {
-    axios.delete('http://localhost:5000/books/'+id)
+    axios.delete('https://backend-hepw.onrender.com/books/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
