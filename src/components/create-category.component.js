@@ -28,7 +28,7 @@ export default class CreateCategory extends Component {
 
     console.log(category);
 
-    axios.post('http://localhost:5000/categorys/add', category)
+    axios.post('https://backend-hepw.onrender.com/categorys/add', category)
       .then(res => console.log(res.data));
 
     this.setState({
